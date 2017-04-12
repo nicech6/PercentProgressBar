@@ -29,6 +29,7 @@ public class PercentProgressBar extends View {
     private int ProColor = Color.GREEN;
     private float pro = 0;
     private float percent = 0;
+    private int textViewSize = 80;
 
     public PercentProgressBar(Context context) {
         super(context);
@@ -58,7 +59,7 @@ public class PercentProgressBar extends View {
         mProPaint.setStyle(Paint.Style.STROKE);
         mTextPaint = new Paint();//中间文字
         mTextPaint.setColor(Color.GREEN);
-        mTextPaint.setTextSize(80);
+        mTextPaint.setTextSize(textViewSize);
         mTextPaint.setAntiAlias(true);
     }
 
@@ -79,10 +80,15 @@ public class PercentProgressBar extends View {
             pro = pro + 1;
             postInvalidateDelayed(10);
             String hah = String.valueOf((pro / orgSweepAngle) * 100 + "%");
-            canvas.drawText(hah, getWidth() / 2, getHeight() / 2, mTextPaint);
-        }else if (pro == (percent * orgSweepAngle) / 100){
-            canvas.drawText(String.valueOf(percent)+"%", getWidth() / 2, getHeight() / 2+40, mTextPaint);
+            canvas.drawText(hah, getWidth() / 2, getHeight() / 2+(textViewSize/2), mTextPaint);
+        } else if (pro == (percent * orgSweepAngle) / 100) {
+            canvas.drawText(String.valueOf(percent) + "%", getWidth() / 2, getHeight() / 2 + (textViewSize/2), mTextPaint);
         }
+    }
+
+    public int setTextViewSize(int textViewSize) {
+        this.textViewSize = textViewSize;
+        return textViewSize;
     }
 
     public float setPercent(float percent) {

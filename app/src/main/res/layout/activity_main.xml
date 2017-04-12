@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.cuihai.percentprogressbar.MainActivity">
 
-    <com.cuihai.percentprogressbar.PercentProgressBar
+    <view.PercentProgressBar
         android:id="@+id/percentProgressBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
