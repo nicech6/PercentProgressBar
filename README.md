@@ -1,7 +1,7 @@
 # PercentProgressBar
 自定义百分比圆形进度条Progress
 # SetUp 
-### 1) In your root build.gradle:
+## 1) In your root build.gradle:
 allprojects {
 
     repositories {
